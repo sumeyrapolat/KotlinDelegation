@@ -25,34 +25,4 @@ Interface Implementation:
 Delegation is commonly used for implementing interfaces. Instead of implementing all methods of an interface in a class, you can delegate the implementation to a separate class. This is especially useful when dealing with interfaces with a large number of methods, as it allows you to focus on implementing only the methods relevant to the class.
 
 To implement delegation in Kotlin, you can use the by keyword, which lets you delegate the implementation of an interface or property to another object. This concise syntax makes it easy to use delegation and leverage its benefits in your Kotlin code.
-
-
-
-// Step 1: Define an interface
-interface Printer {
-    fun print(message: String)
-}
-
-// Step 2: Create a basic implementation of the interface
-class BasicPrinter : Printer {
-    override fun print(message: String) {
-        println("Basic Printing: $message")
-    }
-}
-
-// Step 3: Create a class that delegates printing to an instance of BasicPrinter
-class FancyPrinter(basicPrinter: Printer) : Printer by basicPrinter {
-    // Additional functionality can be added here if needed
-    fun printFancy(message: String) {
-        println("Fancy Printing: $message")
-    }
-}
-
-fun main() {
-    // Step 4: Use the delegation in your application
-    val basicPrinter = BasicPrinter()
-    
-    val fancyPrinter = FancyPrinter(basicPrinter)
-    fancyPrinter.print("Hello, Delegation!")
-    fancyPrinter.printFancy("Fancy Greetings!")
-}
+M
